@@ -1,0 +1,5 @@
+theme: minima
+title: "Ellipsoid Fitting – Li & Griffiths (2004)"
+description: "Python implementation of the least-squares ellipsoid-specific fitting algorithm"
+baseurl: "/Ellipsoid-Fitting-via-Least-Squares-with-Ellipsoid-Specific-Constraints-Li-Griffiths-2004-"
+url: "https://ql-uohull.github.io"

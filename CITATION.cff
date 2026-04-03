@@ -1,0 +1,31 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+type: software
+title: "Ellipsoid Fitting via Least Squares with Ellipsoid-Specific Constraints (Li & Griffiths, 2004)"
+abstract: >
+  A Python implementation of the Li–Griffiths least-squares ellipsoid-specific
+  fitting algorithm. Given a set of 3D point cloud data, this package fits a
+  geometrically valid ellipsoid using a constrained eigenvalue approach derived
+  from the original 2004 paper.
+authors:
+  - family-names: "QL-UoHull"
+    affiliation: "University of Hull"
+repository-code: "https://github.com/QL-UoHull/Ellipsoid-Fitting-via-Least-Squares-with-Ellipsoid-Specific-Constraints-Li-Griffiths-2004-"
+license: MIT
+keywords:
+  - ellipsoid fitting
+  - least squares
+  - 3D point cloud
+  - geometric fitting
+  - computer vision
+references:
+  - type: article
+    title: "Least Squares Ellipsoid Specific Fitting"
+    authors:
+      - family-names: "Li"
+        given-names: "Qingde"
+      - family-names: "Griffiths"
+        given-names: "John G."
+    year: 2004
+    journal: "Proceedings of the Geometric Modeling and Processing"
+    doi: "10.1109/GMAP.2004.1290055"
