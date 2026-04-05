@@ -26,10 +26,16 @@ dependencies = [
 ]
 
 [project.optional-dependencies]
+interactive = [
+    "plotly>=5.0",
+    "ipywidgets>=7.0",
+]
 dev = [
     "pytest>=7",
     "jupyter",
     "nbformat",
+    "plotly>=5.0",
+    "ipywidgets>=7.0",
 ]
 
 [tool.setuptools.packages.find]

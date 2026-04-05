@@ -52,8 +52,9 @@ directions).
 ├── examples/                # Runnable example scripts
 │   ├── basic_example.py     # Fit and visualise a synthetic cloud
 │   └── fit_from_csv.py      # Load CSV datasets and fit
-├── notebooks/               # Jupyter notebook workflow
-│   └── ellipsoid_fitting_demo.ipynb
+├── notebooks/               # Jupyter / Colab notebooks
+│   ├── ellipsoid_fitting_demo.ipynb  # Interactive Jupyter demo
+│   └── colab_demo.ipynb              # Google Colab-ready demo
 ├── tests/                   # pytest test suite
 │   └── test_ellipsoid_fit.py
 ├── CITATION.cff             # Machine-readable citation metadata
@@ -71,14 +72,18 @@ directions).
 git clone https://github.com/QL-UoHull/Ellipsoid-Fitting-via-Least-Squares-with-Ellipsoid-Specific-Constraints-Li-Griffiths-2004-.git
 cd Ellipsoid-Fitting-via-Least-Squares-with-Ellipsoid-Specific-Constraints-Li-Griffiths-2004-
 
-# Install dependencies
+# Install dependencies (includes interactive visualisation packages)
 pip install -r requirements.txt
 
 # (Optional) install the package in editable mode
 pip install -e .
+
+# Interactive notebook extras (Plotly + ipywidgets)
+pip install -e ".[interactive]"
 ```
 
-Dependencies: `numpy >= 1.22`, `scipy >= 1.8`, `matplotlib >= 3.5`.
+Core dependencies: `numpy >= 1.22`, `scipy >= 1.8`, `matplotlib >= 3.5`.  
+Interactive visualisation: `plotly >= 5.0`, `ipywidgets >= 7.0`.
 
 ---
 
@@ -141,12 +146,48 @@ python examples/fit_from_csv.py
 
 ## Jupyter notebook
 
-An end-to-end reproducible workflow is provided in
-`notebooks/ellipsoid_fitting_demo.ipynb`.  Launch with:
+An interactive end-to-end workflow is provided in
+`notebooks/ellipsoid_fitting_demo.ipynb`. It includes:
+
+- **Interactive 3-D Plotly visualisation** of the point cloud and fitted ellipsoid (rotate, zoom, pan; toggle layers via the legend)
+- **ipywidgets controls** to adjust number of points, noise level and opacity on the fly
+- **Comprehensive accuracy metrics**: algebraic RMSE, mean/std of residuals, normalised (geometric-approximation) residuals, centre and radii errors
+- **How-to-interpret** guide for every metric and plot element
+
+Launch with:
 
 ```bash
+# Install interactive dependencies first
+pip install plotly ipywidgets
+
 jupyter notebook notebooks/ellipsoid_fitting_demo.ipynb
 ```
+
+---
+
+## Google Colab
+
+A Colab-ready notebook is provided in `notebooks/colab_demo.ipynb`.
+It installs all dependencies automatically (no local setup required).
+
+**Open in Colab:**
+
+[![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/QL-UoHull/Ellipsoid-Fitting-via-Least-Squares-with-Ellipsoid-Specific-Constraints-Li-Griffiths-2004-/blob/main/notebooks/colab_demo.ipynb)
+
+Or manually:
+
+1. Go to [colab.research.google.com](https://colab.research.google.com)
+2. Select **File → Open notebook → GitHub**
+3. Paste the repository URL and select `notebooks/colab_demo.ipynb`
+4. Click **Runtime → Run all**
+
+The Colab notebook features:
+- Automatic `pip install` of `plotly`, `ipywidgets`, and `scipy`
+- Clones the repository directly inside Colab
+- Interactive 3-D Plotly visualisation (point cloud + fitted surface)
+- Residual-coloured scatter plot to identify high-error regions
+- Full accuracy metrics table
+- Bonus section: rotated ellipsoid and CSV datasets
 
 ---
 
